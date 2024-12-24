@@ -1,0 +1,15 @@
+.ui_input {
+  width: calc(var(--width) - 15px) ;
+  height: 60px;
+  background: var(--super-light-gray);
+  border-radius: 15px;
+  border: 1px solid #eeeeee;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding-left: 15px;
+}
+
+.ui_input::placeholder {
+  color: #c0c0c0;
+}

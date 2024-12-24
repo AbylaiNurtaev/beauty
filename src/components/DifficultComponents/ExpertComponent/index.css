@@ -1,0 +1,124 @@
+.expert_component {
+  width: var(--width);
+  height: 186px;
+  background-color: var(--super-light-gray);
+  border-radius: 20px;
+  border: 1px solid #eeeeee;
+  padding: var(--another-padding) var(--another-padding) var(--another-padding)
+    var(--def-padding);
+}
+
+.expert_component__top_content {
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.about_expert {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+  /* height: 50px; */
+}
+
+.expert_component .expert_img img, .expert_component .expert_img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.expert_component .about_expert__block-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 4px;
+}
+
+.expert_name {
+  text-align: left;
+}
+
+.expert_profession {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.71px;
+  text-align: left;
+  opacity: 0.67;
+}
+
+.expert_component_bttns {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  gap: 15px;
+}
+
+.more_about_expert {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--button--blue-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 0.5px 0.5px 0px;
+}
+
+.registration_day {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.71px;
+  margin: 15px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 1px;
+}
+.registration_day span:first-child {
+  opacity: 0.67;
+}
+.day {
+  opacity: 1 !important;
+}
+.expert_component .times {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 8px;
+  overflow-x: auto;
+}
+
+.expert_component .times::-webkit-scrollbar {
+  opacity: 0;
+}
+
+.any_expert {
+  width: var(--width);
+  height: 80px;
+  background-color: var(--super-light-gray);
+  border-radius: 20px;
+  border: 1px solid #eeeeee;
+  padding: var(--another-padding) var(--another-padding) var(--another-padding)
+    var(--def-padding);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.any_expert_avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.any_expert_title {
+  flex: 1;
+}

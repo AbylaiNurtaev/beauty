@@ -1,0 +1,47 @@
+.choose_component {
+  width: 100%;
+  height: 150px;
+  background: #fefefe;
+  border-radius: 20px;
+  border: 1px solid #eeeeee;
+  padding: var(--def-padding) var(--another-padding) var(--another-padding)
+    var(--another-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.choose_component .choose_commponent_bottom path {
+  fill: #ffff;
+}
+
+.choose_commponent_top {
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+}
+
+.choose_commponent_bottom{
+  width: 100%;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+}
+
+.choose_commponent_icon {
+  width: 40px;
+  height: 40px;
+  background: var(--gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.choose_commponent_title {
+  line-height: 25px;
+  max-width: 111px;
+  margin-bottom: 5px;
+}

@@ -1,0 +1,20 @@
+.ratings {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 2px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.32px;
+  }
+  
+  .ratings span {
+    opacity: 0.67;
+  }
+  
+  .ratings_stars {
+    display: flex;
+    align-items: center;
+    justify-self: start;
+    gap: 4px;
+  }

@@ -1,0 +1,34 @@
+.attention_component {
+  width: var(--width);
+  padding: 20px 7px 20px 10px;
+  border-radius: 20px;
+  background: var(--super-light-gray);
+  border: 1px solid #eeeeee;
+  display: flex;
+  justify-self: start;
+  align-items: start;
+  gap: 10px;
+}
+
+.attention_component_text_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 4px;
+  margin-top: 5px;
+}
+
+.attention_text {
+    max-width: 95%;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  opacity: .67;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 5px;
+}

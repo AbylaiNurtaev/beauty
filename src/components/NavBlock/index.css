@@ -1,0 +1,58 @@
+.navigaion_block {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 180px;
+  height: 110px;
+  background: #fefefe;
+  border-radius: 20px;
+  border: 1px solid #eeeeee;
+  padding: 20px var(--another-padding) var(--another-padding) var(--def-padding);
+}
+
+.nav_block_part {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.expert,
+.order {
+  width: 180px;
+  height: 230px;
+  color: #fff;
+}
+
+.order{
+  background: #93c0f7;
+  background-image: url("../../images/order-bg.png");
+  background-repeat: no-repeat;
+  background-size: 90%;
+  background-position: bottom right;
+}
+.expert .nav_block_part path,
+.order .nav_block_part path{
+  fill: var(--black);
+}
+
+.promotion{
+  background: var(--light-green);
+  background-image: url("../../images/promotion-bg.png");
+  background-repeat: no-repeat;
+  background-size: 55%;
+  background-position: bottom left;
+}
+
+.expert{
+  background: var(--pink-bg);
+  background-image: url("../../images/expert-bg.png");
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: bottom left;
+}
+
+.contacts{
+  width: 370px;
+}

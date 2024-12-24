@@ -1,0 +1,9 @@
+.choose_expert_page {
+  padding: var(--another-padding) var(--def-padding) 20px var(--def-padding);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
+}
+

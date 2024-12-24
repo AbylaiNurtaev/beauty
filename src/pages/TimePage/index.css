@@ -1,0 +1,17 @@
+.time_page {
+  padding: var(--another-padding) var(--def-padding) 45px
+    var(--def-padding);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 25px;
+}
+
+.time_page .times{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+}

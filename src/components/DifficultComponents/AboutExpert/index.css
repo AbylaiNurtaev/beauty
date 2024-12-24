@@ -1,0 +1,67 @@
+.about_expert_component {
+  width: var(--width);
+  height: 620px;
+  background: var(--super-light-gray);
+  border-radius: 20px;
+  border: 1px solid #eeeeee;
+}
+
+.about_expert_component_main_info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: -50px;
+  margin-bottom: 20px;
+}
+
+.expert_img, .expert_img img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.about_expert__block-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 4px;
+}
+
+.expert_name {
+  text-align: left;
+}
+
+.expert_profession {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.71px;
+  text-align: left;
+  opacity: 0.67;
+}
+
+
+.expert_about_me {
+  width: 100%;
+  padding: 0px 20px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+.expert_about_me p:first-child {
+font-size: 16px;
+font-weight: 700;
+line-height: 23px;
+}
+
+.expert_about_me p {
+  font-size: 16px;
+font-weight: 400;
+line-height: 23px;
+margin: 5px;
+}

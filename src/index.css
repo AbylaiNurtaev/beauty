@@ -1,0 +1,172 @@
+html,
+body {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: SF Pro Display;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21.48px;
+  color: #363636;
+}
+
+:root {
+  --button--blue-bg: #3375f6;
+  --page-bg: #f8f8f8;
+  --light-green: #84e8ab;
+  --star-bg: #f5c926;
+  --pink-bg: #edb4f7;
+  --super-light-gray: #fefefe;
+  --light-gray: #f2f2f2;
+  --gray: #f5f5f5;
+  --dark-gray: #5b5b5b;
+  --black: #000000;
+  --def-padding: 10px;
+  --another-padding: 15px;
+  --width: 370px;
+}
+
+button {
+  all: unset;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input {
+  all: unset;
+}
+
+.blue {
+  background: var(--button--blue-bg) !important;
+}
+
+.white {
+  background: #fff !important;
+}
+
+.page_bg {
+  position: relative;
+  background: var(--page-bg);
+  min-height: 100vh;
+}
+
+@media (max-width: 390px) {
+  :root {
+    --def-padding: 7px;
+    --another-padding: 12px;
+    --width: 360px;
+  }
+  .promotion_component,
+  .navigaion_block {
+    width: 165px !important;
+  }
+  .promotion_component {
+    height: auto !important;
+  }
+  .contacts {
+    width: 98% !important;
+  }
+
+  .tips_bttn {
+    width: 75px !important;
+    height: 55px !important;
+  }
+
+  .photo_list {
+    gap: 5px !important;
+  }
+
+  .photo img {
+    width: 92%;
+  }
+  .phone,
+  .grafic {
+    width: 170px !important;
+  }
+
+  .map img {
+    width: 97%;
+    border-radius: 20px;
+  }
+}
+
+@media (max-width: 370px) {
+  .navigaion_block {
+    width: 155px !important;
+    padding: 15px var(--def-padding) var(--def-padding) var(--def-padding);
+  }
+
+  :root {
+    --def-padding: 7px;
+    --another-padding: 12px;
+    --width: 335px;
+  }
+  .datas {
+    gap: 10px;
+  }
+  .time_bttn {
+    padding: 11px 18px !important;
+}
+  .promotion_component,
+  .navigaion_block {
+    width: 155px !important;
+  }
+.promotion_title{
+  font-size: 17px  !important;
+}
+
+.promotion_text{
+  font-size: 13px !important; 
+}
+  .datas .numbers,
+  .datas .weekdays {
+    gap: 17px !important;
+  }
+  .tips_bttn {
+    padding: 11px 18px !important;
+    width: 72px !important;
+    height: 52px !important;
+  }
+  .tips_bttn span {
+    font-size: 13px !important;
+  }
+  .photo_list .photo {
+    width: 50%;
+}
+.contacts_blocks {
+  justify-content: space-between !important;
+  gap: 7px !important;
+}
+
+.phone,
+.grafic {
+  width: 160px !important;
+}
+
+
+.expert_about_me p:first-child {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 23px;
+  }
+  
+  .expert_about_me p {
+    font-size: 15px;
+  font-weight: 400;
+  line-height: 23px;
+  margin: 5px;
+  }
+  
+}

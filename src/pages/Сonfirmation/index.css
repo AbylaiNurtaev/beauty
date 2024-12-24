@@ -1,0 +1,42 @@
+.confirmation_page {
+  padding: var(--another-padding) var(--def-padding) 45px var(--def-padding);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
+}
+
+.content_title {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 28.64px;
+  margin-bottom: -5px;
+}
+
+.content_title span span {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 23px;
+  opacity: 0.67;
+}
+
+.details_list{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+}

@@ -1,0 +1,10 @@
+.order_page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: start;
+  justify-content: center;
+ 
+  padding: var(--another-padding) var(--def-padding) 40px var(--def-padding);
+}
+

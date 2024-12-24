@@ -1,0 +1,15 @@
+.big_bttn {
+  width: 100%;
+  padding: 25px 0px;
+  background: var(--button--blue-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 17px;
+}
+
+.big_bttn span {
+  font-size: 16px;
+  line-height: 23px;
+  color: #ffffff;
+}

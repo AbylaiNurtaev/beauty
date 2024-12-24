@@ -1,0 +1,26 @@
+.category_bttn {
+  flex: 1;
+  padding: 11px 20px;
+  border-radius: 20px;
+  border: none;
+  background: var(--super-light-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #eeeeee;
+  transition: 0.4s ease;
+}
+
+.category_bttn span {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16.71px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.category_bttn_active {
+  background: var(--button--blue-bg);
+  color: #fff;
+}

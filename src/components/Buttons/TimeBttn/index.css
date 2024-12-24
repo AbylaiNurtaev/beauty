@@ -1,0 +1,12 @@
+.time_bttn {
+  padding: 12px 20px;
+  background: var(--gray);
+  font-size: 14px;
+  border-radius: 18px;
+  transition: 0.4s ease;
+}
+
+.time_bttn_active {
+  background: var(--button--blue-bg);
+  color: #ffffff;
+}

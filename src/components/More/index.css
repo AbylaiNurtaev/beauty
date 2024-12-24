@@ -1,0 +1,46 @@
+.more_popup {
+  width: 80%;
+  max-width: 370px;
+  max-height: 600px;
+  position: fixed;
+  top: 10px;
+  right: 10%;
+  background: var(--super-light-gray);
+  padding: var(--def-padding) var(--another-padding) 55px var(--another-padding);
+  border-radius: 15px;
+  overflow-y: auto;
+  box-shadow: 0px 0px 5px  115px var(--gray);
+}
+
+.more_popup::-webkit-scrollbar {
+  width: 0;
+}
+
+.more_bttn {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 23.87px;
+  color: var(--button--blue-bg);
+}
+
+.more_popup_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+
+.more_popup_text p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  opacity: 0.8;
+  padding-right: 6px;
+}
+
+.more_popup_title {
+  width: 80%;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 23px;
+}

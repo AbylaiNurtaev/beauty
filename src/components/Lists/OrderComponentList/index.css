@@ -1,0 +1,9 @@
+.order_list{
+    width: var(--width);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 10px;
+    margin-bottom: 85px;
+}

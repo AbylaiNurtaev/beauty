@@ -1,0 +1,25 @@
+.input_component {
+  width: var(--width);
+  height: 50px;
+  background: var(--super-light-gray);
+  padding: 18px 17px;
+  border-radius: 15px;
+  border: 1px solid #eeeeee;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+}
+
+.input_component .input {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.09px;
+}
+
+.input::placeholder{
+    color: #c0c0c0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.09px;
+}

@@ -1,0 +1,25 @@
+.time_list_component {
+  width: var(--width);
+  background: var(--super-light-gray);
+  border: 1px solid #eeeeee;
+  padding: var(--another-padding) var(--another-padding) 20px
+    var(--another-padding);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 10px;
+}
+
+.time_list_title {
+  margin-left: 8px;
+}
+
+.time_bttns_list {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-wrap: wrap;
+  gap: 8px;
+}

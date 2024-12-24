@@ -1,0 +1,14 @@
+.arrow_to_right_top {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--light-gray);
+  padding: 0px 1px 1px 0px;
+}
+
+.arrow_to_right_top path {
+  fill: var(--dark-gray);
+}

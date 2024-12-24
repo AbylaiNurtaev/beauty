@@ -1,0 +1,17 @@
+.go_to_back_block{
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.go_to_back_arrow {
+  width: 40px;
+  height: 40px;
+  background: var(--light-gray);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 3px;
+}

@@ -1,0 +1,24 @@
+.tips_bttn {
+  padding: 12px 20px;
+  width: 80px;
+  height: 60px;
+  gap: 10px;
+  border-radius: 15px;
+  background: var(--gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.tips_bttn span {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16.71px;
+  text-align: center;
+}
+
+.tips_bttn_active{
+  background: var(--button--blue-bg);
+  color: #ffffff;
+}

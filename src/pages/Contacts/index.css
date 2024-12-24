@@ -1,0 +1,115 @@
+.contacts_page {
+  padding: var(--another-padding) var(--def-padding);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 15px;
+}
+
+.contacts_page_title {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 28.64px;
+}
+
+.contacts_blocks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.address {
+  width: 100%;
+  height: 110px;
+  border-radius: 20px;
+  background-color: #93c0f7;
+  padding: 20px var(--def-padding);
+  color: #ffffff;
+  background-image: url(../../images/mark-bg.png);
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.address_title {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.48px;
+}
+
+.address_text {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21.48px;
+}
+
+.contacts_blocks {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.phone {
+  width: 180px;
+  height: 110px;
+  background-color: var(--pink-bg);
+  border-radius: 20px;
+  padding: 20px var(--def-padding);
+  background-image: url(../../images/phone-bg.png);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+}
+
+.grafic_title,
+.phone_title {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.09px;
+}
+
+.phone_number {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24.09px;
+}
+
+.grafic_clock {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19.09px;
+}
+
+.grafic_days {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.71px;
+}
+
+.grafic {
+  width: 180px;
+  height: 110px;
+  background-color: var(--light-green);
+  border-radius: 20px;
+  padding: 20px var(--def-padding);
+  background-image: url(../../images/promotion-bg.png);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+}
+
+.map{
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.reviews_list{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+}
+

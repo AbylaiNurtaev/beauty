@@ -1,0 +1,79 @@
+.calendar {
+  width: var(--width);
+  background: var(--super-light-gray);
+  border-radius: 20px;
+  padding: var(--another-padding) var(--another-padding) 25px
+    var(--another-padding);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 35px;
+}
+
+.calendar_header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav_arrows {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+}
+
+.next_month {
+  transform: rotate(180deg);
+}
+
+.datas {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 15px;
+}
+.numbers,
+.weekdays {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 22px;
+}
+
+.weekdays {
+  opacity: 0.8;
+}
+
+.numbers {
+  font-weight: 400;
+}
+
+.calendar .weekday,
+.calendar .day {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: .4s ease;
+}
+
+.numbers .day{
+font-size: 16px;
+font-weight: 400;
+line-height: 20px;
+opacity: 0.67 !important;
+
+}
+
+.calendar .active_cal_day {
+  background: var(--button--blue-bg);
+  color: #ffffff;
+  opacity: 1 !important;
+  padding: 4px 6px;
+}
