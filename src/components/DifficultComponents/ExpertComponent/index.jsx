@@ -51,6 +51,9 @@ const ExpertComponent = ({ expert, onClick, active, MoreAbout }) => {
     localStorage.setItem('day', today); // Сохраняем текущую дату
     setActiveTimeBttn(time);
   };
+
+  console.log("expert", expert);
+  
   
   
 
@@ -63,7 +66,7 @@ const ExpertComponent = ({ expert, onClick, active, MoreAbout }) => {
           <div className="expert_component__top_content">
             <div className="about_expert">
               <div className="expert_img">
-                <img src={expert.image} alt="img" />
+                <img src={`https://beautywebapp.ru${expert.image}`} alt="img" />
               </div>
               <div className="about_expert__block-text">
                 <div className="expert_name">
