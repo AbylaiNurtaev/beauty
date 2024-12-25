@@ -33,6 +33,9 @@ const Review = ({showExpert, info, expert}) => {
     }
     
   }, [expert])
+
+  console.log("info", info);
+  
   
   return (
     <div className="review">
@@ -42,7 +45,7 @@ const Review = ({showExpert, info, expert}) => {
         </div>
         <div className="text_info">
           <div className="reviewer_name">
-            <span>{info?.specialist_fio}</span>
+            <span>{info?.client_name}</span>
           </div>
           <Rating text={new Date(info?.created_at).toLocaleDateString('ru-RU', { day: '2-digit', month: 'long', year: 'numeric' })} />
 
@@ -53,7 +56,7 @@ const Review = ({showExpert, info, expert}) => {
       </div>
      {
       showExpert &&  <div className="review_expert">
-      <span>{info?.client_name}</span>
+      <span>{info?.specialist_fio}</span>
       <div className="review_expert_img">
         <img src={info?.specialist_image} alt="expertImg" />
       </div>

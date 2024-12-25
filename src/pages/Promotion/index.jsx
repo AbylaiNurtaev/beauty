@@ -5,12 +5,14 @@ import secondProm from "../../images/promotion_two.png";
 
 import "./index.css";
 import { useEffect, useState } from "react";
+import { format } from "date-fns";
+import { ru } from "date-fns/locale";
 
 const Promotion = () => {
   const [promotions, setPromotions] = useState()
   
   useEffect(() => {
-    fetch("https://beautywebapp.ru/api/offers/main_sales", {
+    fetch("https://beautywebapp.ru/api/offers/", {
       method: "GET",
       headers: {
           "Content-Type": "application/json",
@@ -24,9 +26,16 @@ const Promotion = () => {
       return response.json(); 
   })
   .then(data => {
-      console.log(data);
+    console.log(
+      data
+        .filter(elem => elem?.sales?.length >= 1) // Оставляем только элементы с длиной sales >= 1
+        .map(elem => elem.sales[0]) // Преобразуем отфильтрованные элементы
+    );
+    
       
-      setPromotions([data]);
+      setPromotions(data
+        .filter(elem => elem?.sales?.length >= 1) // Оставляем только элементы с длиной sales >= 1
+        .map(elem => elem.sales[0]));
       // setExperts(data.find((elem) => elem.fio.toLowerCase() == fio.toLowerCase()))
   })
   .catch(error => {
@@ -40,7 +49,7 @@ const Promotion = () => {
       <div className="promotions_list">
         { promotions &&
             promotions.map(prom=>{
-                return <PromotionComponent img={prom?.img} title={prom?.title} description={prom?.description} data={'dasdas'}/>
+                return <PromotionComponent img={`https://beautywebapp.ru${prom?.image}`} title={prom?.name} description={prom?.short_desc} data={(new Date(prom?.start_date).toISOString().split("T")[0].split("-").reverse().join("."))} dataEnd={(new Date(prom?.end_date).toISOString().split("T")[0].split("-").reverse().join("."))} longDesc={prom?.long_desc}/>
             })
         }
       </div>

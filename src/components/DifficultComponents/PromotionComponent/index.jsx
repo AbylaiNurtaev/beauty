@@ -3,7 +3,7 @@ import arrow from "../../../images/svg/arrow.svg";
 import { useState } from "react";
 import ExitBttn from "../../Buttons/ExitBttn";
 
-const PromotionComponent = ({ img, title, description, data }) => {
+const PromotionComponent = ({ img, title, description, data, dataEnd, longDesc =""}) => {
   const terms = [
     `Акция действует с 1 по 30 декабря 2024 года.`,
     `При записи на стрижку или окрашивание — процедура восстановления волос в подарок.`,
@@ -26,7 +26,7 @@ const [hideText,setHideText] = useState(false)
         <p className="promotion_text">{description}</p>
         <div className="promotion_data_text">
           <span>Дата проведения:</span>
-          <span>{data}</span>
+          <span style={{ whiteSpace: "nowrap", fontSize: "10px" }}>{data} - {dataEnd}</span>
         </div>
       </div>
       <button className="more_bttn" onClick={showPopup}>
@@ -37,20 +37,15 @@ const [hideText,setHideText] = useState(false)
           <ExitBttn onClick={showPopup}/>
           <div className={`more_popup_text ${hideText?"hide_text":""}`}>
             <div className="more_popup_title">
-              <span>Сияй этой зимой вместе с нами!</span>
+              <span>{title}</span>
               <div className={`hide_text_bttn ${hideText?"hide_text_bttn_active":""}`} onClick={()=>setHideText(!hideText)}>
                 <img src={arrow} alt="arrow" />
               </div>
             </div>
             <p>
-              Подарите своим волосам здоровье и блеск этой зимой! Воспользуйтесь
-              нашей акцией: при записи на стрижку или окрашивание в период с 1
-              по 30 декабря, вы получаете процедуру восстановления волос в
-              подарок! Профессиональное восстановление подарит вашим волосам
-              силу, блеск и гладкость, что идеально подойдет для зимнего времени
-              года.
+              {longDesc}
             </p>
-            <div className="promotion_terms">
+            {/* <div className="promotion_terms">
               <span>Условия акции:</span>
               <ol>
                 {terms.map((t) => {
@@ -61,7 +56,7 @@ const [hideText,setHideText] = useState(false)
                   );
                 })}
               </ol>
-            </div>
+            </div> */}
           </div>
         </div>
       )}
