@@ -26,7 +26,7 @@ const [hideText,setHideText] = useState(false)
         <p className="promotion_text">{description}</p>
         <div className="promotion_data_text">
           <span>Дата проведения:</span>
-          <span style={{ whiteSpace: "nowrap", fontSize: "10px" }}>{data} - {dataEnd}</span>
+          <span style={{ whiteSpace: "nowrap", fontSize: "13px" }}>{data} - {dataEnd}</span>
         </div>
       </div>
       <button className="more_bttn" onClick={showPopup}>
