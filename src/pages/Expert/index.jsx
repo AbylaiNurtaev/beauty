@@ -26,7 +26,6 @@ const Expert = () => {
       return response.json(); 
   })
   .then(data => {
-      console.log("Data received:", data);
       setExperts(data.find(elem => elem.fio == fio))
   })
   .catch(error => {
