@@ -2,7 +2,10 @@ import "./index.css";
 import Rating from "../Rating";
 import avatar from "../../images/review_avatar.png";
 import expertImg from "../../images/expert_one.png";
-const Review = ({showExpert, info}) => {
+const Review = ({showExpert, info, expert}) => {
+
+  console.log("expert", expert);
+  
   return (
     <div className="review">
       <div className="reviewer">

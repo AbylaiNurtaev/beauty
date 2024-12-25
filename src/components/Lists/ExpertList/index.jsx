@@ -63,7 +63,9 @@ const ExpertList = () => {
         );
       })}
       {
-        choosenExpert && <Button onClick={() => handleSubmit()}>Записаться</Button>
+        choosenExpert && <div style={{ position: "fixed", bottom: "20px", width: "90%" }}>
+        <Button onClick={() => handleSubmit()}>Записаться</Button>
+        </div>
       }
     </div>
   );
