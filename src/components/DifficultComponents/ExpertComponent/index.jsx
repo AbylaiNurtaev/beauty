@@ -115,7 +115,7 @@ const ExpertComponent = ({ expert, onClick, active, MoreAbout }) => {
                 <div className="expert_profession">
                   <span>{expert?.special[0].title}</span>
                 </div>
-                <Rating count={count} text={`(${feedbacks})`} />
+                <Rating count={count} text={feedbacks ? `(${feedbacks})` : ""} />
               </div>
             </div>
             <div className="expert_component_bttns">

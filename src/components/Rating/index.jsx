@@ -13,7 +13,7 @@ const Rating = ({ count = 0, text }) => {
           <img key={index} src={star} alt="Star" />
         ))}
       </div>
-      <span>{text}</span>
+      <span>{text ? text : ""}</span>
     </div>
   );
 };
