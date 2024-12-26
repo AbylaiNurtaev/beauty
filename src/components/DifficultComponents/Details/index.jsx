@@ -8,12 +8,14 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 const Details = ({ type, img, onUpdate }) => { // Добавлен пропс onUpdate
-  const expertName = localStorage.getItem('expert');
+  const expertName = localStorage.getItem("expert");
   const [expert, setExpert] = useState();
+  const [feedbacks, setFeedbacks] = useState(0); // Для хранения количества отзывов
+  const [rating, setRating] = useState(0); // Для хранения рейтинга мастера
 
   const navigate = useNavigate();
-  const time = localStorage.getItem('time');
-  const day = localStorage.getItem('day');
+  const time = localStorage.getItem("time");
+  const day = localStorage.getItem("day");
 
   useEffect(() => {
     fetch("https://beautywebapp.ru/api/specialists/", {
@@ -23,22 +25,48 @@ const Details = ({ type, img, onUpdate }) => { // Добавлен пропс on
       },
       credentials: "include", // Используется для отправки куков при необходимости
     })
-      .then(response => {
+      .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok " + response.statusText);
         }
         return response.json();
       })
-      .then(data => {
-        const foundExpert = data.find(elem => elem.fio === expertName);
+      .then((data) => {
+        const foundExpert = data.find((elem) => elem.fio === expertName);
         setExpert(foundExpert);
 
         // Передаём данные о мастере в родительский компонент
         if (onUpdate) {
           onUpdate({ expert: foundExpert });
         }
+
+        // Запрашиваем отзывы для найденного мастера
+        if (foundExpert) {
+          fetch(`https://beautywebapp.ru/api/feedback/${foundExpert.id}`, {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            credentials: "include",
+          })
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error(
+                  "Network response was not ok " + response.statusText
+                );
+              }
+              return response.json();
+            })
+            .then((data) => {
+              setFeedbacks(data?.feedbacks.length || 0); // Устанавливаем количество отзывов
+              setRating(data?.rating || 0); // Устанавливаем рейтинг
+            })
+            .catch((error) => {
+              console.error("Fetch feedback error:", error);
+            });
+        }
       })
-      .catch(error => {
+      .catch((error) => {
         console.error("Fetch error:", error);
       });
   }, []);
@@ -46,8 +74,8 @@ const Details = ({ type, img, onUpdate }) => { // Добавлен пропс on
   const formatDate = (dateString) => {
     if (dateString) {
       const date = new Date(dateString);
-      const options = { day: 'numeric', month: 'long', year: 'numeric' };
-      return date.toLocaleDateString('ru-RU', options);
+      const options = { day: "numeric", month: "long", year: "numeric" };
+      return date.toLocaleDateString("ru-RU", options);
     } else {
       return "Выберите время";
     }
@@ -77,7 +105,10 @@ const Details = ({ type, img, onUpdate }) => { // Добавлен пропс on
                   <div className="expert_profession">
                     <span>{expert?.description}</span>
                   </div>
-                  <Rating text={"(1 отзыв)"} />
+                  <Rating
+                    count={rating} // Передаем рейтинг мастера
+                    text={`(${feedbacks} отзывов)`} // Отображаем количество отзывов
+                  />
                 </div>
               </>
             ) : (
@@ -85,10 +116,18 @@ const Details = ({ type, img, onUpdate }) => { // Добавлен пропс on
             )}
           </div>
           {img === "pencil" && (
-            <img src={pencilLogo} onClick={() => navigate('/choose-expert')} alt="" className="pencilLogo" />
+            <img
+              src={pencilLogo}
+              onClick={() => navigate("/choose-expert")}
+              alt=""
+              className="pencilLogo"
+            />
           )}
           {img === "i" && (
-            <button className="more_about_expert" onClick={() => navigate("/expert")}>
+            <button
+              className="more_about_expert"
+              onClick={() => navigate("/expert")}
+            >
               <img src={i} alt="" />
             </button>
           )}
@@ -115,7 +154,7 @@ const Details = ({ type, img, onUpdate }) => { // Добавлен пропс on
               alt=""
               onClick={() => {
                 handleTimeUpdate(); // Обновляем время в родительском компоненте
-                navigate('/choose-time');
+                navigate("/choose-time");
               }}
               className="pencilLogo"
             />
