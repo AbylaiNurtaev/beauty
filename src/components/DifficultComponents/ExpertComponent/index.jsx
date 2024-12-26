@@ -113,7 +113,7 @@ const ExpertComponent = ({ expert, onClick, active, MoreAbout }) => {
                   <span>{expert.fio}</span>
                 </div>
                 <div className="expert_profession">
-                  <span>{expert?.special[0]}</span>
+                  <span>{expert?.special[0].title}</span>
                 </div>
                 <Rating count={count} text={`(${feedbacks})`} />
               </div>
