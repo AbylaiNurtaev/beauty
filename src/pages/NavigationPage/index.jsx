@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import CreatedText from "../../components/CreatedText";
 import NavBlock from "../../components/NavBlock";
 import "../NavigationPage/index.css";
+import { useEffect } from "react";
 const NavigationPage = () => {
   const navigate = useNavigate();
   const navBlockNames = [
@@ -35,6 +36,9 @@ const NavigationPage = () => {
     },
   ];
 
+  useEffect(() => {
+    localStorage.clear()
+  }, [])
   return (
     <div className="navigation_page page_bg">
       <div className="nav_panel">

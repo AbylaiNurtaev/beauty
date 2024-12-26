@@ -26,7 +26,10 @@ const PhotoPage = () => {
       })
       .then((data) => {
         setCategories(data);
+        console.log(data);
+        
       })
+      
       .catch((error) => {
         console.error("Fetch error:", error);
       });

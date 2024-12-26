@@ -29,13 +29,15 @@ const Promotion = () => {
     console.log(
       data
         .filter(elem => elem?.sales?.length >= 1) // Оставляем только элементы с длиной sales >= 1
-        .map(elem => elem.sales[0]) // Преобразуем отфильтрованные элементы
+        .map(elem => elem.sales)
+        .flat() // Преобразуем отфильтрованные элементы
     );
     
       
       setPromotions(data
         .filter(elem => elem?.sales?.length >= 1) // Оставляем только элементы с длиной sales >= 1
-        .map(elem => elem.sales[0]));
+        .map(elem => elem.sales)
+        .flat());
       // setExperts(data.find((elem) => elem.fio.toLowerCase() == fio.toLowerCase()))
   })
   .catch(error => {
