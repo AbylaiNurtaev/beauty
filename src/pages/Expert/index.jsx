@@ -5,6 +5,7 @@ import Review from "../../components/Review";
 import { useNavigate, useParams } from "react-router-dom";
 import Button from "../../components/Buttons/Button";
 import { useEffect, useState } from "react";
+import Review2 from "../../components/Review2";
 
 const Expert = () => {
 
@@ -27,6 +28,7 @@ const Expert = () => {
   })
   .then(data => {
       setExperts(data.find(elem => elem.fio == fio))
+      console.log(data.find(elem => elem.fio == fio))
   })
   .catch(error => {
       console.error("Fetch error:", error);
@@ -41,7 +43,7 @@ const Expert = () => {
         expert && <>
         <GoToBackArrow />
         <AboutExpert fio={fio}/>
-        <Review expert={expert}/>
+        <Review2 expert={expert}/>
         <Button className={"bottom_bttn"} onClick={()=>navigate(-1)}>Записаться к специалисту</Button>
         </>
       }

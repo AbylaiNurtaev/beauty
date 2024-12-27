@@ -4,7 +4,6 @@ import star from "../../images/svg/star.svg";
 const Rating = ({ count = 0, text }) => {
   // Создаем массив длиной count для использования в map
   const starsArray = Array.from({ length: count });
-  console.log(starsArray, 'starsArray');
   
   return (
     <div className="ratings">

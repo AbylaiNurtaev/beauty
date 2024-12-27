@@ -4,7 +4,6 @@
   flex-direction: column;
   justify-content: start;
   align-items: start;
-  gap: 17px;
 }
 
 .category_bttn_list {
@@ -14,6 +13,7 @@
   gap: 5px;
   /* max-height: 500px; */
   transition: .4s ease;
+  margin-top: 5px;
 }
 
 .hide_category_bttns_list {
@@ -85,3 +85,25 @@
   border: 0.67px solid #eeeeee;
   width: 100%;
 }
+
+
+.photo_list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Две колонки */
+  gap: 10px; /* Промежутки между фото */
+  width: 100%;
+}
+
+.photo_list .photo {
+  overflow: hidden;
+  border-radius: 14px;
+  border: 0.67px solid #eeeeee;
+  width: 100%;
+}
+
+.photo_list .photo img {
+  width: 100%;
+  height: auto; /* Сохраняет пропорции изображения */
+  object-fit: cover; /* Масштабирует фото, чтобы заполнить рамку */
+}
+

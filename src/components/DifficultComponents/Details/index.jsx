@@ -33,6 +33,8 @@ const Details = ({ type, img, onUpdate }) => { // Добавлен пропс on
       })
       .then((data) => {
         const foundExpert = data.find((elem) => elem.fio === expertName);
+        console.log('foundExpert', foundExpert);
+        
         setExpert(foundExpert);
 
         // Передаём данные о мастере в родительский компонент
@@ -103,11 +105,11 @@ const Details = ({ type, img, onUpdate }) => { // Добавлен пропс on
                     <span>{expert?.fio}</span>
                   </div>
                   <div className="expert_profession">
-                    <span>{expert?.description}</span>
+                    <span>{expert?.special[0]?.title}</span>
                   </div>
                   <Rating
                     count={rating} // Передаем рейтинг мастера
-                    text={`(${feedbacks} отзывов)`} // Отображаем количество отзывов
+                    text={feedbacks ? `(${feedbacks} отзывов)` : ""} // Отображаем количество отзывов
                   />
                 </div>
               </>

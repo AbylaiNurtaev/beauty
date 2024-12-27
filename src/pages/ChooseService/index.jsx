@@ -43,10 +43,8 @@ const ChooseServicePage = () => {
               return response.json();
             })
             .then((data2) => {
-              // setServices([data])
-              console.log(data);
               const newData = data.filter((elem) => data2.includes(elem.name))
-              console.log(newData)
+              console.log("services", [newData])
 
               setServices([newData])
             })
@@ -56,7 +54,6 @@ const ChooseServicePage = () => {
         }else{
 
           setServices([data])
-
         }
         
         
@@ -89,8 +86,8 @@ const ChooseServicePage = () => {
   return (
     <div className="choose_service_page page_bg">
       <GoToBackArrow />
-      <SearchInput />
-      <Discount />
+      {/* <SearchInput /> */}
+      {/* <Discount /> */}
       {services && services.map((serv) => {
         return (
           <ServiceList
@@ -105,8 +102,10 @@ const ChooseServicePage = () => {
       {activeService && (
         <div className="choose_service_result">
           <div className="choose_service_result_text">
-            <span>{activeService.title}</span>
+            <span >{activeService.title}</span>
+            {/* <span>{activeService?.category?.name}</span> */}
             <span className="time_res">{activeService.duration}</span>
+
             <span>{activeService.price} ₽</span>
           </div>
           <Button onClick={() => handleSubmit()}>Продолжить</Button>

@@ -10,7 +10,8 @@ const ServiceComponent = ({
   setActiveService,
   chosenService,
   img,
-  serviceId
+  serviceId,
+  category
 }) => {
   const active = chosenService.title == title;
   
@@ -20,7 +21,7 @@ const ServiceComponent = ({
     if (active) {
       setActiveService("");
     } else {      
-      setActiveService({title, duration: duraion, price, serviceId});
+      setActiveService({title, duration: duraion, price, serviceId, category});
     }
   };
 
@@ -31,7 +32,7 @@ const ServiceComponent = ({
           <span>{title}</span>
         </div>
         <div className="service_duration">
-          <span>{duraion}</span>
+          <span>{duraion} {category ? category.name : ""}</span>
         </div>
         <div className="service_price">
           <span>{price} ₽</span>
