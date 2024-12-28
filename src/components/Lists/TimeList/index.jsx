@@ -38,37 +38,36 @@ const TimeList = ({ title, selectedDay, activeTime, onTimeSelect }) => {
           // Фильтруем слоты по выбранному дню
           const filteredSlots1 = data.flatMap((item) =>
             item.available_dates.filter((date) => {
-              const day = parseInt(date.date.split("-")[2], 10);
-              console.log(date.date == selectedDay);
               
-              return date.date == selectedDay;
+              return date.date === selectedDay; // Фильтруем по выбранному дню
             })
           );
-          console.log('formattedSlots', filteredSlots1)
-
           
-          
-
-          if (!filteredSlots1) {
+          if (!filteredSlots1 || filteredSlots1.length === 0) {
             console.error("No slots found for selected day");
-            return; 
+            return;
           }
-
-          const filteredSlots = filteredSlots1?.slots || [];
+          
+          const filteredSlots = filteredSlots1.flatMap((item) => item.slots); // Извлекаем все слоты
           const formattedSlots = Array.from(
             new Set(
-              filteredSlots1
-                .flatMap((slot) => slot.slots.map((elem) => elem.start_time.slice(0, 5))) // Преобразуем в массив строк времени
+              filteredSlots.map((slot) => slot.start_time.slice(0, 5)) // Берем только HH:mm
             )
-          ).filter((time) => {
-            const hour = parseInt(time.split(":")[0], 10); // Корректно извлекаем часы
-            console.log('hour', hour);
-            if (title === "День") {
-              return hour < 16;
-            } else if (title === "Вечер") {
-              return hour >= 16;
-            }
-            return true;
+          )
+            .sort((a, b) => {
+              // Сортируем по времени
+              const [hoursA, minutesA] = a.split(":").map(Number);
+              const [hoursB, minutesB] = b.split(":").map(Number);
+              return hoursA * 60 + minutesA - (hoursB * 60 + minutesB);
+            })
+            .filter((time) => {
+              const hour = parseInt(time.split(":")[0], 10); // Фильтруем по часам
+              if (title === "День") {
+                return hour < 16; // Утро до 16:00
+              } else if (title === "Вечер") {
+                return hour >= 16; // Вечер с 16:00
+              }
+              return true;
           });
           
         
@@ -102,7 +101,7 @@ const TimeList = ({ title, selectedDay, activeTime, onTimeSelect }) => {
             />
           ))
         ) : (
-          <p>No available slots for this day</p>
+          <p>Нет актуальных слотов для записи</p>
         )}
       </div>
     </div>

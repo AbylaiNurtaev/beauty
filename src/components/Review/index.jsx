@@ -24,9 +24,8 @@ const Review = ({showExpert, info, expert}) => {
     })
     .then(data => {
       if(data){
-        console.log('data', data)
         setFeedbacks(data?.feedbacks);
-        setRating(data?.rating)
+        setRating(data?.vote)
       }
         // setExperts(data.find(elem => elem.fio == fio))
     })
@@ -36,8 +35,8 @@ const Review = ({showExpert, info, expert}) => {
     }
     
   }, [expert])
-
-  console.log("info", info);
+  
+  console.log(info);
   
   
   return (
@@ -48,9 +47,9 @@ const Review = ({showExpert, info, expert}) => {
         </div>
         <div className="text_info">
           <div className="reviewer_name">
-            <span>{info?.client_name}</span>dsa
+            <span>{info?.client_name}</span>
           </div>
-          <Rating count={rating ? rating : null} text={new Date(info?.created_at).toLocaleDateString('ru-RU', { day: '2-digit', month: 'long', year: 'numeric' })} />
+          <Rating count={info?.vote || rating || null} text={new Date(info?.created_at).toLocaleDateString('ru-RU', { day: '2-digit', month: 'long', year: 'numeric' })} />
 
         </div>
       </div>
@@ -61,7 +60,7 @@ const Review = ({showExpert, info, expert}) => {
       showExpert &&  <div className="review_expert">
       <span>{info?.specialist_fio}</span>
       <div className="review_expert_img">
-        <img src={info?.specialist_image} alt="expertImg" />
+        <img src={`https://beautywebapp.ru${info?.specialist_image}`} alt="expertImg" />
       </div>
     </div>
      }

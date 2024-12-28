@@ -39,8 +39,8 @@ const FAQ = () => {
         <span>Часто задаваемые вопросы</span>
       </div>
       <div className="questions_list">
-        {questions && questions.map(q=>{
-            return <Question text={q.question} answer={q.answer}/>
+        {questions && questions.map((q, idx)=>{
+            return <Question text={q.question} answer={q.answer} idx={idx}/>
         })}
       </div>
     </div>

@@ -2,7 +2,7 @@ import "./index.css"
 
 const CreatedText = () =>{
     return (
-        <span className="created_text">Разработано в <u>COMPANY</u></span>
+        <span onClick={() => window.location.href="https://t.me/beautywebapp_bot"} className="created_text">Разработано в <u>Beautywebapp</u></span>
     )
 }
 

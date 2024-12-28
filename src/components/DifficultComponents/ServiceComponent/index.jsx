@@ -1,6 +1,7 @@
 import "./index.css";
 import pencilLogo from "../../../images/svg/pencil_icon.svg";
 import CircleButton from "../../Buttons/CircleButton";
+import { useNavigate } from "react-router-dom";
 
 const ServiceComponent = ({
   title,
@@ -14,9 +15,9 @@ const ServiceComponent = ({
   category,
   description
 }) => {
-  const active = chosenService.title == title;
+  const active = chosenService?.title == title;
   
-  
+  const navigate = useNavigate()
   
 
   const ChooseService = () => {
@@ -43,7 +44,7 @@ const ServiceComponent = ({
       {setActiveService && (
         <CircleButton onClick={ChooseService} active={active} />
       )}
-      {(!setActiveService && img==="pencil") && <img src={pencilLogo} alt="pencilLogo" />}
+      {(!setActiveService && img==="pencil") && <img src={pencilLogo} onClick={() => navigate('/choose-service')} alt="pencilLogo" />}
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Attention from "../../components/Attention";
 import Button from "../../components/Buttons/Button";
 import Details from "../../components/DifficultComponents/Details";
@@ -20,6 +20,35 @@ const ConfirmaionPage = () => {
 
   const[error, setError] = useState(false)
   
+  const [offer, setOffer] = useState()
+
+  useEffect(() => {
+    const serviceId = localStorage.getItem('serviceId')
+    if(serviceId){
+
+      fetch("https://beautywebapp.ru/api/offers", {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        credentials: "include"  // Используется для отправки куков при необходимости
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Network response was not ok " + response.statusText);
+        }
+        return response.json(); 
+    })
+    .then(data => {
+      console.log(data.find(elem => elem.id == serviceId));
+      
+      setOffer(data.find(elem => elem.id == serviceId))
+    })
+    .catch(error => {
+        console.error("Fetch error:", error);
+    });
+    }
+  }, [])
 
   const handleSubmit = async () => {
     if(!agree){
@@ -30,7 +59,7 @@ const ConfirmaionPage = () => {
     const time = localStorage.getItem('time')
     const day = localStorage.getItem('day')
     const expertId = localStorage.getItem('expertId')
-    const serviceId = localStorage.getItem('expertId')
+    const serviceId = localStorage.getItem('serviceId')
 
     const requestBody = {
       "specialist_id": +expertId,
@@ -83,6 +112,14 @@ const ConfirmaionPage = () => {
           Услуги <span>· {duration ? duration : ""}</span>
         </span>
       </div>
+        <ServiceComponent
+        
+        title={offer?.name}
+        duraion={offer?.duration}
+        price={offer?.cost}
+        img={"pencil"}
+        chosenService={offer?.name}
+      />
       <div className="content_title">
         <span>Ваши данные</span>
       </div>

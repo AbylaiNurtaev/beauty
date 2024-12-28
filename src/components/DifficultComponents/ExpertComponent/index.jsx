@@ -138,7 +138,7 @@ const ExpertComponent = ({ expert, onClick, active, MoreAbout }) => {
                       day: "numeric",
                       weekday: "short",
                     })
-                  : "Нет доступных дат"}
+                  : ""}
               </span>
             </div>
             <div className="times">

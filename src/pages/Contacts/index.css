@@ -95,6 +95,7 @@
   background-color: var(--light-green);
   border-radius: 20px;
   padding: 20px var(--def-padding);
+  padding-top: 5px;
   background-image: url(../../images/promotion-bg.png);
   background-repeat: no-repeat;
   background-position: left bottom;

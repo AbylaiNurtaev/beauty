@@ -44,7 +44,7 @@ const Expert = () => {
         <GoToBackArrow />
         <AboutExpert fio={fio}/>
         <Review2 expert={expert}/>
-        <Button className={"bottom_bttn"} onClick={()=>navigate(-1)}>Записаться к специалисту</Button>
+        <Button className={"bottom_bttn"} onClick={()=>navigate('/choose-expert')}>Записаться к специалисту</Button>
         </>
       }
     </div>

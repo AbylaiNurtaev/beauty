@@ -1,6 +1,6 @@
 import ExitBttn from "../Buttons/ExitBttn";
 import "./index.css";
-const MorePopup = ({ active, onClick }) => {
+const MorePopup = ({ active, onClick, message }) => {
   return (
     <div className="more_popup_component">
       <span className="more_bttn" onClick={onClick}>
@@ -8,27 +8,14 @@ const MorePopup = ({ active, onClick }) => {
       </span>
       {active && (
         <div className="more_popup">
+          <div style={{ position: "absolute", top: "10px", right: "10px" }}>
           <ExitBttn onClick={onClick}/>
+          </div>
           <div className="more_popup_text">
             <div className="more_popup_title">
-              <span>Оплата только по карте или QR</span>
+              <span>{message?.title}</span>
             </div>
-            <p>
-              С 14 ноября 2024 года салон красоты «Название» переходит на
-              безналичный расчет — теперь мы принимаем оплату только по карте
-              или через QR-код. Наличными расчет не производится.
-            </p>
-            <p>
-              Мы ценим ваше время и безопасность, и предлагаем удобный способ
-              оплаты, который ускоряет процесс и делает его более безопасным для
-              всех наших клиентов.
-            </p>
-            <p>
-              Наш салон находится со стороны входа супермаркета «Магнит», что
-              делает нас легко доступными для вас. Приезжайте, воспользуйтесь
-              удобной оплатой и получайте первоклассный сервис в нашем салоне!
-            </p>
-            <p>Будем рады видеть вас!</p>
+            <div dangerouslySetInnerHTML={{ __html: message?.long_text }}></div>
           </div>
         </div>
       )}

@@ -1,8 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./index.css";
 
-const Question = ({ text, answer }) => {
+const Question = ({ text, answer, idx }) => {
+  useEffect(() => {
+    if(idx == 0) {
+      setShowAnswer(true)
+    } 
+  }, [])
   const [showAnswer, setShowAnswer] = useState(false);
+  
+  
 
   return (
     <div className={`question_component ${showAnswer?"active_answer":""}`}>

@@ -12,7 +12,7 @@ const Promotion = () => {
   const [promotions, setPromotions] = useState()
   
   useEffect(() => {
-    fetch("https://beautywebapp.ru/api/offers/", {
+    fetch("https://beautywebapp.ru/api/offers/sales", {
       method: "GET",
       headers: {
           "Content-Type": "application/json",
@@ -28,15 +28,15 @@ const Promotion = () => {
   .then(data => {
     console.log(
       data
-        .filter(elem => elem?.sales?.length >= 1) // Оставляем только элементы с длиной sales >= 1
-        .map(elem => elem.sales)
+        // .filter(elem => elem?.sales?.length >= 1) // Оставляем только элементы с длиной sales >= 1
+        // .map(elem => elem.sales)
         .flat() // Преобразуем отфильтрованные элементы
     );
     
       
       setPromotions(data
-        .filter(elem => elem?.sales?.length >= 1) // Оставляем только элементы с длиной sales >= 1
-        .map(elem => elem.sales)
+        // .filter(elem => elem?.sales?.length >= 1) // Оставляем только элементы с длиной sales >= 1
+        // .map(elem => elem.sales)
         .flat());
       // setExperts(data.find((elem) => elem.fio.toLowerCase() == fio.toLowerCase()))
   })

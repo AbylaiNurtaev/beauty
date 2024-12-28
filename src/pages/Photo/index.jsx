@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import CategoryBttn from "../../components/Buttons/CategoryBttn";
 import GoToBackArrow from "../../components/GoToBackArrow";
-import arrow from "../../images/svg/arrow.svg";
 
 import "./index.css";
 
@@ -45,37 +44,17 @@ const PhotoPage = () => {
   return (
     <div className="photo_page page_bg">
       <GoToBackArrow />
-        <div className="category_bttn_line" style={{ marginTop: "17px" }}>
-          {categories.slice(0, 3).map((category) => (
-            <CategoryBttn
-              key={category.name}
-              onClick={() => setActive(category.name)}
-              active={category.name === active}
-            >
-              {category.name}
-            </CategoryBttn>
-          ))}
-        </div>
-          <button
-            className="hide_bttns_bttn"
-            onClick={() => setCloseBttnsList(!closeBttnsList)}
-          >
-            <img
-              src={arrow}
-              alt="arrow"
-              style={{
-                transform: closeBttnsList ? "rotate(90deg)" : "rotate(-90deg)",
-              }}
-            />
-          </button>
       <div
         className={`category_bttn_list ${
           closeBttnsList ? "hide_category_bttns_list" : ""
         }`}
       >
         {!closeBttnsList && (
-          <div className="category_bttn_line">
-            {categories.slice(3).map((category) => (
+          <div
+            className="category_bttn_line"
+            style={{ paddingBottom: "10px", marginTop: "10px" }}
+          >
+            {categories.map((category) => (
               <CategoryBttn
                 key={category.name}
                 onClick={() => setActive(category.name)}
@@ -87,21 +66,13 @@ const PhotoPage = () => {
           </div>
         )}
       </div>
-      <div className="photo_list" style={{ marginTop: "17px" }}>
-          {activePhotos.slice(0, Math.ceil(activePhotos.length / 2, activePhotos.length)).map((photo) => (
-            <div className="photo" key={photo}>
-              <img src={`https://beautywebapp.ru${photo}`} alt="" />
-            </div>
-          ))}
-        </div>
-
-        <div className="photo_list">
-          {activePhotos.slice(Math.ceil(activePhotos.length / 2, activePhotos.length)).map((photo) => (
-            <div className="photo" key={photo}>
-              <img src={`https://beautywebapp.ru${photo}`} alt="" />
-            </div>
-          ))}
+      <div className="photo_list">
+        {activePhotos.map((photo, index) => (
+          <div className="photo" key={index}>
+            <img src={`https://beautywebapp.ru${photo}`} alt="category" />
           </div>
+        ))}
+      </div>
     </div>
   );
 };

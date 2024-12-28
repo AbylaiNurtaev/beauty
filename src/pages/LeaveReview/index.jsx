@@ -28,32 +28,51 @@ const LeaveReview = () => {
 
   useEffect(() => {
     const fio = localStorage.getItem('expert')
-    fetch("https://beautywebapp.ru/api/feedback/feedbacks", {
-      method: "POST", // Проверьте метод
+    fetch("https://beautywebapp.ru/api/specialists/", {
+      method: "GET",
       headers: {
           "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-          specialist_id: 3,
-          client_telegram_id: 0,
-          vote: 4,
-          title: "string",
-          message: "fasdfdsaf"
-      }),
-      credentials: "include", // Если нужны куки
-    })
-    .then(response => {
+      credentials: "include"  // Используется для отправки куков при необходимости
+  })
+  .then(response => {
       if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
+          throw new Error("Network response was not ok " + response.statusText);
       }
-      return response.json();
-    })
-    .then(data => {
-      console.log("Success:", data);
-    })
-    .catch(error => {
-      console.error("Error during booking:", error);
-    });
+      return response.json(); 
+  })
+  .then(data => {
+      setExperts(data.find(expert => expert.fio == fio))
+  })
+  .catch(error => {
+      console.error("Fetch error:", error);
+  });
+    // fetch("https://beautywebapp.ru/api/feedback/feedbacks", {
+    //   method: "POST", // Проверьте метод
+    //   headers: {
+    //       "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify({
+    //       specialist_id: 3,
+    //       client_telegram_id: 0,
+    //       vote: 4,
+    //       title: "string",
+    //       message: "fasdfdsaf"
+    //   }),
+    //   credentials: "include", // Если нужны куки
+    // })
+    // .then(response => {
+    //   if (!response.ok) {
+    //       throw new Error(`HTTP error! Status: ${response.status}`);
+    //   }
+    //   return response.json();
+    // })
+    // .then(data => {
+    //   console.log("Success:", data);
+    // })
+    // .catch(error => {
+    //   console.error("Error during booking:", error);
+    // });
     
  }, [])
 
@@ -118,7 +137,7 @@ const sendInfo = async () => {
       <div className="review_component">
         <div className="review_component_service">
           <div className="expert_img">
-            <img src={experts?.image} alt="expert_img" />
+            <img src={`https://beautywebapp.ru${experts?.image}`} alt="expert_img" />
           </div>
           <div className="review_component_service__block-text">
             <div className="expert_name">

@@ -39,9 +39,7 @@ const [hideText,setHideText] = useState(false)
             <div className="more_popup_title">
               <span>{title}</span>
             </div>
-            <p>
-              {longDesc}
-            </p>
+            <div dangerouslySetInnerHTML={{ __html: longDesc }}></div>
           </div>
         </div>
       )}

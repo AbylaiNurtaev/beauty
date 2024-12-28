@@ -5,8 +5,9 @@
 .more_popup {
   width: 100%;
   max-width: 370px;
-  max-height: 600px;
+  max-height: 80vh; 
   position: fixed;
+  
   top: 10px;
   right: 0%;
   background: var(--super-light-gray);
@@ -47,4 +48,5 @@
   font-size: 20px;
   font-weight: 500;
   line-height: 23px;
+  margin-top: 0px
 }

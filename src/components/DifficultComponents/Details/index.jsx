@@ -98,7 +98,7 @@ const Details = ({ type, img, onUpdate }) => { // Добавлен пропс on
             {expert ? (
               <>
                 <div className="details_img">
-                  <img src={expert?.image} alt="expert" />
+                  <img src={`https://beautywebapp.ru${expert?.image}`} alt="expert" />
                 </div>
                 <div className="about_expert__block-text">
                   <div className="expert_name">
@@ -139,7 +139,7 @@ const Details = ({ type, img, onUpdate }) => { // Добавлен пропс on
         <>
           <div className="details_component_main_content">
             <div className="details_img">
-              <img src={clock} alt="clock" />
+              <img src={clock} style={{ width: "23px" }} alt="clock" />
             </div>
             <div className="about_expert__block-text">
               <div className="service_time">

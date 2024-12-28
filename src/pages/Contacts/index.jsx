@@ -30,6 +30,8 @@ const ContactsPage = () => {
   }, [])
 
   const [contacts, setContacts] = useState()
+  console.log("contac", contacts?.map_url);
+  
 
 
 
@@ -61,7 +63,7 @@ const ContactsPage = () => {
             <span>График работы</span>
           </div>
           <div className="grafic_clock">
-            <span>{contacts?.work_time}</span>
+            <div dangerouslySetInnerHTML={{ __html: contacts?.work_time }}></div>
           </div>
           <div className="grafic_days">
             {/* <span>Пн - Сб</span> */}
@@ -82,7 +84,8 @@ const ContactsPage = () => {
     Георгиевский проспект, 27к2 — Яндекс Карты
   </a>
   <iframe
-    src="https://yandex.kz/map-widget/v1/?ll=37.170805%2C55.964786&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgo1NDEyODk1MjU2EmLQoNC-0YHRgdC40Y8sINCc0L7RgdC60LLQsCwg0JfQtdC70LXQvdC-0LPRgNCw0LQsINCT0LXQvtGA0LPQuNC10LLRgdC60LjQuSDQv9GA0L7RgdC_0LXQutGCLCAyN9C6MiIKDeeuFEIV8dtfQg%2C%2C&z=17.17"
+    // src={"https://yandex.kz/map-widget/v1/?ll=37.170805%2C55.964786&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgo1NDEyODk1MjU2EmLQoNC-0YHRgdC40Y8sINCc0L7RgdC60LLQsCwg0JfQtdC70LXQvdC-0LPRgNCw0LQsINCT0LXQvtGA0LPQuNC10LLRgdC60LjQuSDQv9GA0L7RgdC_0LXQutGCLCAyN9C6MiIKDeeuFEIV8dtfQg%2C%2C&z=17.17"}
+    src={contacts?.map_url}
     height="400"
     // allowFullScreen
     style={{ position: 'relative', width: "100%", border: "none" }}

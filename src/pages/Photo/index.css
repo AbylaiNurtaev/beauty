@@ -11,99 +11,53 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
-  /* max-height: 500px; */
-  transition: .4s ease;
+  transition: 0.4s ease;
   margin-top: 5px;
 }
 
 .hide_category_bttns_list {
-    max-height: 0;
-  }
-  .hide_category_bttns_list button {
-    opacity: 0;
-  }
-    
-.hide_category_bttns_list .hide_bttns_bttn img{
-    transform: rotate(-90deg);
-    opacity: 1 !important;
+  max-height: 0;
 }
 
-.hide_category_bttns_list .hide_bttns_bttn{
-    opacity: 1 !important;
-    margin-bottom: 10px;
+.hide_category_bttns_list button {
+  opacity: 0;
+}
+
+.hide_category_bttns_list .hide_bttns_bttn img {
+  transform: rotate(-90deg);
+  opacity: 1 !important;
+}
+
+.hide_category_bttns_list .hide_bttns_bttn {
+  opacity: 1 !important;
+  margin-bottom: 10px;
 }
 
 .category_bttn_line {
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  overflow-x: scroll;
   gap: 5px;
   justify-content: space-between;
 }
 
-.hide_bttns_bttn {
-  flex: 1;
-  display: flex;
-  justify-content: end;
-  align-items: start;
-  padding-right: 5px;
-  transition: .4s ease;
-}
-.hide_bttns_bttn img {
-  transition: .4s ease;
-  transform: rotate(90deg);
-}
-
-.photo_list {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: start;
-  flex-wrap: wrap;
-  gap: 10px;
-  /* max-height: 600px; */
-  width: 100%;
-}
-
-.photo_list .photo {
-  overflow: hidden;
-}
-
-.photos_column{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  
-  gap: 10px;
-  width: 100%;
-  
-}
-
-.photo_list .photo img {
-  border-radius: 14px;
-  border: 0.67px solid #eeeeee;
-  width: 100%;
-}
-
-
 .photo_list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Две колонки */
-  gap: 10px; /* Промежутки между фото */
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
   width: 100%;
+  margin-top: 10px
 }
 
-.photo_list .photo {
+.photo {
   overflow: hidden;
   border-radius: 14px;
   border: 0.67px solid #eeeeee;
   width: 100%;
 }
 
-.photo_list .photo img {
+.photo img {
   width: 100%;
-  height: auto; /* Сохраняет пропорции изображения */
-  object-fit: cover; /* Масштабирует фото, чтобы заполнить рамку */
+  height: auto;
+  object-fit: cover;
 }
-
