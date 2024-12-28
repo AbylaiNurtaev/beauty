@@ -38,9 +38,10 @@
   width: 95%;
   right: 2.5%;
   max-width: 390px;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: "flex-start";
   justify-content: center;
   gap: 20px;
   z-index: 10;

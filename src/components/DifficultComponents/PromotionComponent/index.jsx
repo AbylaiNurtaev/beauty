@@ -38,25 +38,10 @@ const [hideText,setHideText] = useState(false)
           <div className={`more_popup_text ${hideText?"hide_text":""}`}>
             <div className="more_popup_title">
               <span>{title}</span>
-              {/* <div className={`hide_text_bttn ${hideText?"hide_text_bttn_active":""}`} onClick={()=>setHideText(!hideText)}> */}
-                {/* <img src={arrow} alt="arrow" /> */}
-              {/* </div> */}
             </div>
             <p>
               {longDesc}
             </p>
-            {/* <div className="promotion_terms">
-              <span>Условия акции:</span>
-              <ol>
-                {terms.map((t) => {
-                  return (
-                    <li>
-                      <span>{t}</span>
-                    </li>
-                  );
-                })}
-              </ol>
-            </div> */}
           </div>
         </div>
       )}
