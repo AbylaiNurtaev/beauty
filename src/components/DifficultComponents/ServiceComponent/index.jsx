@@ -11,9 +11,11 @@ const ServiceComponent = ({
   chosenService,
   img,
   serviceId,
-  category
+  category,
+  description
 }) => {
   const active = chosenService.title == title;
+  
   
   
 
@@ -32,7 +34,7 @@ const ServiceComponent = ({
           <span>{title}</span>
         </div>
         <div className="service_duration">
-          <span>{duraion} {category ? category.name : ""}</span>
+          <span>{duraion} {description ? description : ""}</span>
         </div>
         <div className="service_price">
           <span>{price} ₽</span>

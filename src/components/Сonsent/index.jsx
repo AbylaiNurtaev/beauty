@@ -2,18 +2,16 @@ import { useState } from "react";
 import CircleButton from "../Buttons/CircleButton";
 import "./index.css";
 
-const Consent = () => {
-  const [agree, setAgree] = useState(false);
-
+const Consent = ({ handleChangeAgree, agree, error }) => {
   const HandleAgree = () => {
-    setAgree(!agree);
+    handleChangeAgree(!agree);
   };
 
   return (
     <div className="consent">
       <CircleButton active={agree} onClick={HandleAgree} />
       <div className="consent_text">
-        <p>
+        <p style={error ? {color: "red"} : {}}>
           Я даю согласие на обработку моих персональных данных в соответствии с
           <span>Политикой конфиденциальности.</span>
         </p>

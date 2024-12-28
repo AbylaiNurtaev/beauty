@@ -16,7 +16,8 @@ const ServiceList = ({ title, services, setActiveService, chosen }) => {
 
   // Группировка услуг по категориям
   const groupedServices = services.reduce((acc, service) => {
-    const category = service.name || "Без категории";
+    const category = service.category.name || "Без категории";
+
     if (!acc[category]) {
       acc[category] = [];
     }
@@ -56,6 +57,7 @@ const ServiceList = ({ title, services, setActiveService, chosen }) => {
                 ind={ind}
                 chosenService={chosen}
                 category={serv?.category}
+                description={serv?.description}
               />
             ))}
           </div>

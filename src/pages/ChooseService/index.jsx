@@ -85,9 +85,9 @@ const ChooseServicePage = () => {
 
   return (
     <div className="choose_service_page page_bg">
-      <GoToBackArrow />
+      <GoToBackArrow/>
       {/* <SearchInput /> */}
-      {/* <Discount /> */}
+      <Discount />
       {services && services.map((serv) => {
         return (
           <ServiceList

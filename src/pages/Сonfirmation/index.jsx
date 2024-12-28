@@ -16,10 +16,17 @@ const ConfirmaionPage = () => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [comment, setComment] = useState("");
+  const [agree, setAgree] = useState(false);
 
+  const[error, setError] = useState(false)
   
 
   const handleSubmit = async () => {
+    if(!agree){
+      setError(true)
+      return
+    }
+    setError(false)
     const time = localStorage.getItem('time')
     const day = localStorage.getItem('day')
     const expertId = localStorage.getItem('expertId')
@@ -84,7 +91,7 @@ const ConfirmaionPage = () => {
         <Input placeholder={"Номер телефона"} value={phone} onChange={(e) => setPhone(e.target.value)} />
         <Input placeholder={"Комментарий к записи"} value={comment} onChange={(e) => setComment(e.target.value)} />
       </form>
-      <Consent />
+      <Consent handleChangeAgree={(value) => setAgree(value)} agree={agree} error={error}/>
       <Attention />
       <Button onClick={handleSubmit}>Записаться</Button>
     </div>
