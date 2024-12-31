@@ -2,12 +2,13 @@ import "./index.css";
 import expert from "../../images/expert_one.png";
 import MorePopup from "../More";
 import { useEffect, useState } from "react";
+
 const Attention = () => {
   const [showPopup, setShowPopup] = useState(false);
 
-  const expertId = localStorage.getItem('expertId')
-  const[expert, setExpert] = useState()
-  const [messages, setMessages] = useState()
+  const expertFio = localStorage.getItem('expert');
+  const [expert, setExpert] = useState();
+  const [messages, setMessages] = useState();
 
   useEffect(() => {
     fetch("https://beautywebapp.ru/api/specialists/", {
@@ -17,15 +18,16 @@ const Attention = () => {
       },
       credentials: "include",
     })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Network response was not ok " + response.statusText);
-      }
-      return response.json();
-    })
-    .then(data => {
-      setExpert(data.find(expert => expert.id == expertId))
-    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok " + response.statusText);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setExpert(data.find((expert) => expert.fio === expertFio));
+      });
+
     fetch("https://beautywebapp.ru/api/specialists/important_message", {
       method: "GET",
       headers: {
@@ -33,19 +35,21 @@ const Attention = () => {
       },
       credentials: "include",
     })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Network response was not ok " + response.statusText);
-      }
-      return response.json();
-    })
-    .then(data => {
-      setMessages(data)
-    })
-  }, [])
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok " + response.statusText);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setMessages(data);
+      });
+  }, []);
 
   const HandlePopup = () => {
-    setShowPopup(!showPopup);
+    console.log('click');
+    
+    setShowPopup((prevState) => !prevState); // Переключение состояния
   };
 
   return (
@@ -57,10 +61,12 @@ const Attention = () => {
         <div className="attention_title">
           <span>Клиент, внимание!</span>
         </div>
-        <div className="attention_text">
-          {messages?.short_text}
-        </div>
-        <MorePopup onClick={HandlePopup} message={messages} active={showPopup} />
+        <div className="attention_text">{messages?.short_text}</div>
+        <MorePopup
+          onClick1={HandlePopup} // Передаем функцию закрытия/открытия
+          message={messages}
+          active={showPopup} // Передаем текущее состояние
+        />
       </div>
     </div>
   );

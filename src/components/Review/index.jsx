@@ -60,7 +60,7 @@ const Review = ({showExpert, info, expert}) => {
       showExpert &&  <div className="review_expert">
       <span>{info?.specialist_fio}</span>
       <div className="review_expert_img">
-        <img src={`https://beautywebapp.ru${info?.specialist_image}`} alt="expertImg" />
+        <img style={{ borderRadius: "50%" }} src={`https://beautywebapp.ru${info?.specialist_image}`} alt="expertImg" />
       </div>
     </div>
      }

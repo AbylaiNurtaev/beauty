@@ -50,7 +50,7 @@ const OrderDetailsPage = () => {
         />
       </div>
       {/* Перенаправление на /leave-review сделано лишь для демонстрации,чтобы заказчик смог перейти на нее и рассмотреть верстку */}
-      <Button onClick={() => navigate("/leave-review")}>Назад в меню</Button>
+      <Button onClick={() => navigate("/")}>Назад в меню</Button>
     </div>
   );
 };

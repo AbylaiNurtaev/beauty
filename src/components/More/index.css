@@ -1,24 +1,44 @@
-.more_popup{
-  width: 100%;
-}
-
 .more_popup {
   width: 100%;
   max-width: 370px;
-  max-height: 80vh; 
+  max-height: 80vh; /* Ограничиваем высоту на 80% высоты экрана */
   position: fixed;
-  
-  top: 10px;
+  top: 0%; /* Смещаем попап вниз для удобства */
   right: 0%;
   background: var(--super-light-gray);
-  padding: var(--def-padding) var(--another-padding) 55px var(--another-padding);
+  padding: var(--def-padding) var(--another-padding) 20px var(--another-padding); /* Уменьшаем паддинги */
   border-radius: 15px;
-  overflow-y: auto;
-  box-shadow: 0px 0px 5px  115px var(--gray);
+  overflow-y: auto; /* Вертикальная прокрутка */
+  overflow-x: hidden; /* Запрещаем горизонтальную прокрутку */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Оптимизируем тень */
+  display: flex; /* Для управления дочерними элементами */
+  flex-direction: column; /* Делаем элементы вертикальными */
+}
+
+.more_popup_text {
+  flex: 1; /* Растягиваем текстовый блок на доступную высоту */
+  overflow-y: auto; /* Убедимся, что текст внутри блока может скроллиться */
+  margin-top: 10px;
+}
+
+.more_popup_title {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 23px;
+  margin-bottom: 10px;
 }
 
 .more_popup::-webkit-scrollbar {
-  width: 0;
+  width: 6px;
+}
+
+.more_popup::-webkit-scrollbar-thumb {
+  background: var(--gray);
+  border-radius: 5px;
+}
+
+.more_popup::-webkit-scrollbar-thumb:hover {
+  background: var(--button--blue-bg);
 }
 
 .more_bttn {
@@ -26,27 +46,4 @@
   font-weight: 500;
   line-height: 23.87px;
   color: var(--button--blue-bg);
-}
-
-.more_popup_text {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: start;
-}
-
-.more_popup_text p {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 22px;
-  opacity: 0.8;
-  padding-right: 6px;
-}
-
-.more_popup_title {
-  width: 80%;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 23px;
-  margin-top: 0px
 }

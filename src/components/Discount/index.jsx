@@ -44,9 +44,9 @@ const Discount = () => {
             <div className="more_popup_title">
               <span>{discount?.title}</span>
             </div>
-            <p>
-              {discount?.description}
-            </p>
+            <div dangerouslySetInnerHTML={{ __html: discount?.description }}>
+              
+            </div>
           </div>
         </div>
       }
