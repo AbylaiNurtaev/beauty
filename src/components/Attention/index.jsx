@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 const Attention = () => {
   const [showPopup, setShowPopup] = useState(false);
 
-  const expertFio = localStorage.getItem('expert');
+  const expertId = localStorage.getItem('expertId');
   const [expert, setExpert] = useState();
   const [messages, setMessages] = useState();
 
@@ -25,7 +25,7 @@ const Attention = () => {
         return response.json();
       })
       .then((data) => {
-        setExpert(data.find((expert) => expert.fio === expertFio));
+        setExpert(data.find((expert) => expert.id == expertId));
       });
 
     fetch("https://beautywebapp.ru/api/specialists/important_message", {

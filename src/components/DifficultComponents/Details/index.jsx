@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 const Details = ({ type, img, onUpdate }) => { // Добавлен пропс onUpdate
-  const expertName = localStorage.getItem("expert");
+  const expertId = localStorage.getItem("expertId");
   const [expert, setExpert] = useState();
   const [feedbacks, setFeedbacks] = useState(0); // Для хранения количества отзывов
   const [rating, setRating] = useState(0); // Для хранения рейтинга мастера
@@ -32,7 +32,7 @@ const Details = ({ type, img, onUpdate }) => { // Добавлен пропс on
         return response.json();
       })
       .then((data) => {
-        const foundExpert = data.find((elem) => elem.fio === expertName);
+        const foundExpert = data.find((elem) => elem.id == expertId);
         console.log('foundExpert', foundExpert);
         
         setExpert(foundExpert);

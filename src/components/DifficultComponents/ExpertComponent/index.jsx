@@ -166,7 +166,7 @@ const ExpertComponent = ({ expert, onClick, active, MoreAbout }) => {
           <div className="any_expert_title">
             <span>Любой специалист</span>
           </div>
-          <CircleButton onClick={onClick} active={active} />
+          <CircleButton onClick={() => onClick()} active={active} />
         </div>
       )}
     </>

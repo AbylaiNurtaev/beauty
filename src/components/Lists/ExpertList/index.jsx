@@ -36,15 +36,23 @@ const ExpertList = () => {
   const handleSubmit = () => {
     localStorage.setItem('expert', choosenExpert)
     localStorage.setItem('expertId', expertId)
-    
-    
-    navigate("/choose-service")
+    const service = localStorage.getItem('serviceId')
+    const time = localStorage.getItem('time')
+    if(service && time){
+      navigate("/confirmation")
+    }else if(!service){
+      navigate("/choose-service")
+    }else if(!time){
+      navigate("/choose-time")
+    }
   }
+  
   
   
   const [experts, setExperts] = useState()
   const [choosenExpert, setChoosenExpert] = useState("");
   
+  console.log(expertId);
 
   return (
     <div className="expert_list">

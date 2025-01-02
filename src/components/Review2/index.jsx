@@ -28,7 +28,7 @@ const Review2 = ({showExpert, expert}) => {
         console.log('data', data)
         setFeedbacks(data?.feedbacks);
         setInfo(data?.feedbacks);
-        setRating(data?.rating)
+        setRating(data?.feedbacks?.vote)
       }
         // setExperts(data.find(elem => elem.fio == fio))
     })
@@ -55,7 +55,7 @@ const Review2 = ({showExpert, expert}) => {
               <div className="reviewer_name">
                 <span>{elem?.client?.first_name}</span>
               </div>
-              <Rating count={rating ? rating : null} text={new Date(elem?.created_at).toLocaleDateString('ru-RU', { day: '2-digit', month: 'long', year: 'numeric' })} />
+              <Rating count={elem?.vote ? elem?.vote : null} text={new Date(elem?.created_at).toLocaleDateString('ru-RU', { day: '2-digit', month: 'long', year: 'numeric' })} />
     
             </div>
           </div>

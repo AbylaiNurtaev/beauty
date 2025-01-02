@@ -73,12 +73,14 @@ const ChooseServicePage = () => {
     localStorage.setItem('price', activeService.price)
     localStorage.setItem('duration', activeService.duration)
     localStorage.setItem('serviceId', activeService.serviceId)
+    const expert = localStorage.getItem('expert')
     const time = localStorage.getItem('time')
-    if(time?.length >= 1){
+    if(time?.length >= 1 && expert.length >= 1){
       navigate("/confirmation")
+    }else if(!expert){
+      navigate("/choose-expert")
     }else{
-
-      navigate("/choose-time")
+      navigate('/choose-time')
     }
   }
   
