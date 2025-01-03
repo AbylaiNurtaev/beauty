@@ -21,6 +21,16 @@ const ConfirmaionPage = () => {
   const[error, setError] = useState(false)
   
   const [offer, setOffer] = useState()
+  const [telegramId, setTelegramId] = useState(null);
+
+  useEffect(() => {
+    const userId = window.Telegram.WebApp.initDataUnsafe.user?.id;
+    if (userId) {
+      setTelegramId(userId);
+    } else {
+      console.error("Не удалось получить Telegram ID");
+    }
+  }, []);
 
   useEffect(() => {
     const serviceId = localStorage.getItem('serviceId')
@@ -64,7 +74,7 @@ const ConfirmaionPage = () => {
     const requestBody = {
       "specialist_id": +expertId,
       "service_id": +serviceId,
-      "client_telegram_id": 91124946,
+      "client_telegram_id": telegramId,
       "booking_date": day,
       "booking_start_time": time,
       "client_name": name,
