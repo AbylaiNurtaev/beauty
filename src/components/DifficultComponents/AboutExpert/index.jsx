@@ -7,7 +7,7 @@ const AboutExpert = ({fio}) => {
   const [feedbacks, setFeedbacks] = useState();
   const [count, setCount] = useState();
   useEffect(() => {
-    fetch("https://beautywebapp.ru/api/specialists/", {
+    fetch("https://demo.beautywebapp.ru/api/specialists/", {
       method: "GET",
       headers: {
           "Content-Type": "application/json",
@@ -24,7 +24,7 @@ const AboutExpert = ({fio}) => {
       console.log("Data received:", data.filter((elem) => elem.fio.toLowerCase() == fio.toLowerCase()));
       setExperts(data.find((elem) => elem.fio.toLowerCase() == fio.toLowerCase()))
 
-      fetch(`https://beautywebapp.ru/api/feedback/${data.find((elem) => elem.fio.toLowerCase() == fio.toLowerCase())?.id}`, {
+      fetch(`https://demo.beautywebapp.ru/api/feedback/${data.find((elem) => elem.fio.toLowerCase() == fio.toLowerCase())?.id}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -55,7 +55,7 @@ const AboutExpert = ({fio}) => {
     <div className="about_expert_component">
       <div className="about_expert_component_main_info">
         <div className="expert_img">
-          <img src={`https://beautywebapp.ru/${experts?.image}`} alt="expert_img" />
+          <img src={`https://demo.beautywebapp.ru/${experts?.image}`} alt="expert_img" />
         </div>
         <div className="about_expert__block-text">
           <div className="expert_name">

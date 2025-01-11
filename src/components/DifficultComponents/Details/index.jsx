@@ -18,7 +18,7 @@ const Details = ({ type, img, onUpdate }) => { // Добавлен пропс on
   const day = localStorage.getItem("day");
 
   useEffect(() => {
-    fetch("https://beautywebapp.ru/api/specialists/", {
+    fetch("https://demo.beautywebapp.ru/api/specialists/", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -44,7 +44,7 @@ const Details = ({ type, img, onUpdate }) => { // Добавлен пропс on
 
         // Запрашиваем отзывы для найденного мастера
         if (foundExpert) {
-          fetch(`https://beautywebapp.ru/api/feedback/${foundExpert.id}`, {
+          fetch(`https://demo.beautywebapp.ru/api/feedback/${foundExpert.id}`, {
             method: "GET",
             headers: {
               "Content-Type": "application/json",
@@ -98,7 +98,7 @@ const Details = ({ type, img, onUpdate }) => { // Добавлен пропс on
             {expert ? (
               <>
                 <div className="details_img">
-                  <img src={`https://beautywebapp.ru${expert?.image}`} alt="expert" />
+                  <img src={`https://demo.beautywebapp.ru${expert?.image}`} alt="expert" />
                 </div>
                 <div className="about_expert__block-text">
                   <div className="expert_name">

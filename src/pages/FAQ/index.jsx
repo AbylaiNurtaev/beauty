@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 const FAQ = () => {
 
   useEffect(() => {
-    fetch("https://beautywebapp.ru/api/faq", {
+    fetch("https://demo.beautywebapp.ru/api/faq", {
       method: "GET",
       headers: {
           "Content-Type": "application/json",

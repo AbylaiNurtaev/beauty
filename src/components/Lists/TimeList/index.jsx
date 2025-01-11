@@ -13,7 +13,7 @@ const TimeList = ({ title, selectedDay, activeTime, onTimeSelect }) => {
     const serviceId = localStorage.getItem('serviceId');
 
     if (serviceId) {
-      fetch(`https://beautywebapp.ru/api/order/free_slots_by_service/${serviceId}`, {
+      fetch(`https://demo.beautywebapp.ru/api/order/free_slots_by_service/${serviceId}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

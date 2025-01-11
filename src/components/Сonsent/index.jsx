@@ -6,7 +6,7 @@ import ExitBttn from "../Buttons/ExitBttn";
 const Consent = ({ handleChangeAgree, agree, error }) => {
   const [discount, setDiscount] = useState()
   useEffect(() => {
-    fetch("https://beautywebapp.ru/api/specialists/policies", {
+    fetch("https://demo.beautywebapp.ru/api/specialists/policies", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

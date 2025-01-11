@@ -14,7 +14,7 @@ const ExpertComponent = ({ expert, onClick, active, MoreAbout }) => {
   const [nearestDate, setNearestDate] = useState("");
 
   useEffect(() => {
-    fetch(`https://beautywebapp.ru/api/order/free_slots/${expert?.id}`, {
+    fetch(`https://demo.beautywebapp.ru/api/order/free_slots/${expert?.id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -67,7 +67,7 @@ const ExpertComponent = ({ expert, onClick, active, MoreAbout }) => {
         console.error("Fetch error:", error);
       });
 
-    fetch(`https://beautywebapp.ru/api/feedback/${expert?.id}`, {
+    fetch(`https://demo.beautywebapp.ru/api/feedback/${expert?.id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -106,7 +106,7 @@ const ExpertComponent = ({ expert, onClick, active, MoreAbout }) => {
           <div className="expert_component__top_content">
             <div className="about_expert">
               <div className="expert_img">
-                <img src={`https://beautywebapp.ru${expert.image}`} alt="img" />
+                <img src={`https://demo.beautywebapp.ru/${expert.image}`} alt="img" />
               </div>
               <div className="about_expert__block-text">
                 <div className="expert_name">

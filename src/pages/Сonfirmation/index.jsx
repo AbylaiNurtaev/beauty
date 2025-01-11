@@ -24,7 +24,7 @@ const ConfirmaionPage = () => {
   const [telegramId, setTelegramId] = useState(null);
 
   useEffect(() => {
-    const userId = window.Telegram.WebApp.initDataUnsafe.user?.id;
+    const userId = window.Telegram?.WebApp?.initDataUnsafe?.user?.id;
     if (userId) {
       setTelegramId(userId);
     } else {
@@ -36,7 +36,7 @@ const ConfirmaionPage = () => {
     const serviceId = localStorage.getItem('serviceId')
     if(serviceId){
 
-      fetch("https://beautywebapp.ru/api/offers", {
+      fetch("https://demo.beautywebapp.ru/api/offers", {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -74,7 +74,7 @@ const ConfirmaionPage = () => {
     const requestBody = {
       "specialist_id": +expertId,
       "service_id": +serviceId,
-      "client_telegram_id": telegramId,
+      "client_telegram_id": telegramId || 927836,
       "booking_date": day,
       "booking_start_time": time,
       "client_name": name,
@@ -85,7 +85,7 @@ const ConfirmaionPage = () => {
     console.log("Request Body:", JSON.stringify(requestBody, null, 2));
   
     try {
-      const response = await fetch("https://beautywebapp.ru/api/order/book", {
+      const response = await fetch("https://demo.beautywebapp.ru/api/order/book", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

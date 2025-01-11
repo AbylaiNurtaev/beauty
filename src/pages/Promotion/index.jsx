@@ -12,7 +12,7 @@ const Promotion = () => {
   const [promotions, setPromotions] = useState()
   
   useEffect(() => {
-    fetch("https://beautywebapp.ru/api/offers/sales", {
+    fetch("https://demo.beautywebapp.ru/api/offers/sales", {
       method: "GET",
       headers: {
           "Content-Type": "application/json",
@@ -51,7 +51,7 @@ const Promotion = () => {
       <div className="promotions_list">
         { promotions &&
             promotions.map(prom=>{
-                return <PromotionComponent img={`https://beautywebapp.ru${prom?.image}`} title={prom?.name} description={prom?.short_desc} data={(new Date(prom?.start_date).toISOString().split("T")[0].split("-").reverse().join("."))} dataEnd={(new Date(prom?.end_date).toISOString().split("T")[0].split("-").reverse().join("."))} longDesc={prom?.long_desc}/>
+                return <PromotionComponent img={`https://demo.beautywebapp.ru/${prom?.image}`} title={prom?.name} description={prom?.short_desc} data={(new Date(prom?.start_date).toISOString().split("T")[0].split("-").reverse().join("."))} dataEnd={(new Date(prom?.end_date).toISOString().split("T")[0].split("-").reverse().join("."))} longDesc={prom?.long_desc}/>
             })
         }
       </div>

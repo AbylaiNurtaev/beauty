@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 const ContactsPage = () => {
 
   useEffect(() => {
-    fetch("https://beautywebapp.ru/api/specialists/contacts", {
+    fetch("https://demo.beautywebapp.ru/api/specialists/contacts", {
       method: "GET",
       headers: {
           "Content-Type": "application/json",

@@ -10,7 +10,7 @@ const PhotoPage = () => {
   const [categories, setCategories] = useState([]); // Список категорий
 
   useEffect(() => {
-    fetch("https://beautywebapp.ru/api/offers/categories_with_photos", {
+    fetch("https://demo.beautywebapp.ru/api/offers/categories_with_photos", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -69,7 +69,7 @@ const PhotoPage = () => {
       <div className="photo_list">
         {activePhotos.map((photo, index) => (
           <div className="photo" key={index}>
-            <img src={`https://beautywebapp.ru${photo}`} alt="category" />
+            <img src={`https://demo.beautywebapp.ru${photo}`} alt="category" />
           </div>
         ))}
       </div>

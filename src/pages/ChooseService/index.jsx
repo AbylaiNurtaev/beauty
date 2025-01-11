@@ -13,7 +13,7 @@ const ChooseServicePage = () => {
   const [services, setServices] = useState()
 
   useEffect(() => {
-    fetch("https://beautywebapp.ru/api/offers", {
+    fetch("https://demo.beautywebapp.ru/api/offers", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -29,7 +29,7 @@ const ChooseServicePage = () => {
       .then((data) => {
         const expertId = localStorage.getItem('expertId')
         if(expertId){
-          fetch(`https://beautywebapp.ru/api/offers/specialist/${expertId}/services`, {
+          fetch(`https://demo.beautywebapp.ru/api/offers/specialist/${expertId}/services`, {
             method: "GET",
             headers: {
               "Content-Type": "application/json",

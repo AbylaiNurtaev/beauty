@@ -10,7 +10,7 @@ const Review2 = ({showExpert, expert}) => {
   const [info, setInfo] = useState()
   useEffect(() => {
     if(expert?.id){
-      fetch(`https://beautywebapp.ru/api/feedback/${expert.id}`, {
+      fetch(`https://demo.beautywebapp.ru/api/feedback/${expert.id}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",

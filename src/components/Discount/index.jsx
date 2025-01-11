@@ -8,7 +8,7 @@ const Discount = () => {
   const[popup, setPopup] = useState(false)
 
   useEffect(() => {
-    fetch("https://beautywebapp.ru/api/offers/main_sales", {
+    fetch("https://demo.beautywebapp.ru/api/offers/main_sales", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

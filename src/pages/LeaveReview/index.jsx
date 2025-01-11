@@ -28,7 +28,7 @@ const LeaveReview = () => {
 
   useEffect(() => {
     const fio = localStorage.getItem('expert')
-    fetch("https://beautywebapp.ru/api/specialists/", {
+    fetch("https://demo.beautywebapp.ru/api/specialists/", {
       method: "GET",
       headers: {
           "Content-Type": "application/json",
@@ -47,32 +47,6 @@ const LeaveReview = () => {
   .catch(error => {
       console.error("Fetch error:", error);
   });
-    // fetch("https://beautywebapp.ru/api/feedback/feedbacks", {
-    //   method: "POST", // Проверьте метод
-    //   headers: {
-    //       "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({
-    //       specialist_id: 3,
-    //       client_telegram_id: 0,
-    //       vote: 4,
-    //       title: "string",
-    //       message: "fasdfdsaf"
-    //   }),
-    //   credentials: "include", // Если нужны куки
-    // })
-    // .then(response => {
-    //   if (!response.ok) {
-    //       throw new Error(`HTTP error! Status: ${response.status}`);
-    //   }
-    //   return response.json();
-    // })
-    // .then(data => {
-    //   console.log("Success:", data);
-    // })
-    // .catch(error => {
-    //   console.error("Error during booking:", error);
-    // });
     
  }, [])
 
@@ -109,7 +83,7 @@ const sendInfo = async () => {
   console.log(requestBody);
   
   try {
-    const response = await fetch("https://beautywebapp.ru/api/feedback/feedbacks", {
+    const response = await fetch("https://demo.beautywebapp.ru/api/feedback/feedbacks", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

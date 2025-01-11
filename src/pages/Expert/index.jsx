@@ -13,7 +13,7 @@ const Expert = () => {
   const [expert, setExperts] = useState()
 
   useEffect(() => {
-    fetch("https://beautywebapp.ru/api/specialists/", {
+    fetch("https://demo.beautywebapp.ru/api/specialists/", {
       method: "GET",
       headers: {
           "Content-Type": "application/json",

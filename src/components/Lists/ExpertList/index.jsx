@@ -15,7 +15,7 @@ const ExpertList = () => {
     const fetchExperts = async () => {
       try {
         // Получаем список специалистов
-        const response = await fetch("https://beautywebapp.ru/api/specialists/", {
+        const response = await fetch("https://demo.beautywebapp.ru/api/specialists/", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -33,7 +33,7 @@ const ExpertList = () => {
         // Если есть title, фильтруем специалистов
         if (title) {
           const filteredExperts = await Promise.all(specialists.map(async (expert) => {
-            const serviceResponse = await fetch(`https://beautywebapp.ru/api/offers/specialist/${expert.id}/services`, {
+            const serviceResponse = await fetch(`https://demo.beautywebapp.ru/api/offers/specialist/${expert.id}/services`, {
               method: "GET",
               headers: {
                 "Content-Type": "application/json",

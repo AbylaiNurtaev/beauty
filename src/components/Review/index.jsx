@@ -9,7 +9,7 @@ const Review = ({showExpert, info, expert}) => {
   const [rating, setRating] = useState()
   useEffect(() => {
     if(expert?.id){
-      fetch(`https://beautywebapp.ru/api/feedback/${expert.id}`, {
+      fetch(`https://demo.beautywebapp.ru/api/feedback/${expert.id}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -60,7 +60,7 @@ const Review = ({showExpert, info, expert}) => {
       showExpert &&  <div className="review_expert">
       <span>{info?.specialist_fio}</span>
       <div className="review_expert_img">
-        <img style={{ borderRadius: "50%" }} src={`https://beautywebapp.ru${info?.specialist_image}`} alt="expertImg" />
+        <img style={{ borderRadius: "50%" }} src={`https://demo.beautywebapp.ru${info?.specialist_image}`} alt="expertImg" />
       </div>
     </div>
      }

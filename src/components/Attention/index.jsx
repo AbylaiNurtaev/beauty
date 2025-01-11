@@ -11,7 +11,7 @@ const Attention = () => {
   const [messages, setMessages] = useState();
 
   useEffect(() => {
-    fetch("https://beautywebapp.ru/api/specialists/", {
+    fetch("https://demo.beautywebapp.ru/api/specialists/", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -28,7 +28,7 @@ const Attention = () => {
         setExpert(data.find((expert) => expert.id == expertId));
       });
 
-    fetch("https://beautywebapp.ru/api/specialists/important_message", {
+    fetch("https://demo.beautywebapp.ru/api/specialists/important_message", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -55,7 +55,7 @@ const Attention = () => {
   return (
     <div className="attention_component">
       <div className="expert_img">
-        <img src={`https://beautywebapp.ru/${expert?.image}`} alt="expert" />
+        <img src={`https://demo.beautywebapp.ru/${expert?.image}`} alt="expert" />
       </div>
       <div className="attention_component_text_content">
         <div className="attention_title">
